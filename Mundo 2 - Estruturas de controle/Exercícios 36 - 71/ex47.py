@@ -1,0 +1,6 @@
+"""Exercício Python 047: Faça um programa que mostre na tela todos os números pares que estão no intervalo entre 1 e 50."""
+
+
+for n in range(0, 51, 2):
+    print(".",    end='')
+    print(n, end='')
