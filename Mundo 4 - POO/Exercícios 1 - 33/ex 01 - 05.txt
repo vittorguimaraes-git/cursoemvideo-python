@@ -1,4 +1,6 @@
-Pergunta 01 -> Em que ano ocorreu a "Crise do software" no mercado?
+Link da aula: https://www.youtube.com/watch?v=fjLL4dKqw6U&list=PLHz_AreHm4dn_RXXoa3Ameh77f95Hgwv3&index=3
+
+Pergunta 01 - Em que ano ocorreu a "Crise do software" no mercado?
 
 A) 1950
 
@@ -11,7 +13,7 @@ D) 2000
 Resposta correta: B)
 
 
-Pergunta 02 -> Qual das característica a seguir identifica as primeiras
+Pergunta 02 - Qual das característica a seguir identifica as primeiras
 linguagens lineares?
 
 A) Maior modularidade
@@ -25,7 +27,7 @@ D) Instruções de baixo nível
 Resposta correta: B)
 
 
-Pergunta 03 -> Quem foi o criador do "smalltalk", uma das primeiras linguagens
+Pergunta 03 - Quem foi o criador do "smalltalk", uma das primeiras linguagens
 orientada a objetos.
 
 A) Edsger Dijkstra
@@ -39,7 +41,7 @@ D) Kristen Nygaard
 Resposta correta: C)
 
 
-Pergunta 04 -> A linguagem "Simula" foi um superconjunto de que outra linguagem?
+Pergunta 04 - A linguagem "Simula" foi um superconjunto de que outra linguagem?
 
 A) ALGOL
 
@@ -52,7 +54,7 @@ D) Python
 Resposta correta: A)
 
 
-Pergunta 05 -> Na sigla "OOAD" as ultimas dua letras significam...
+Pergunta 05 - Na sigla "OOAD" as ultimas dua letras significam...
 
 A) ALGOL / Dashboard
 
@@ -63,8 +65,3 @@ C) Analytics / Default
 D) Analysis / Design
 
 Resposta correta: D)
-
-
-
-
-

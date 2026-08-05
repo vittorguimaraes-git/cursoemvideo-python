@@ -1,0 +1,67 @@
+Link da aula: https://www.youtube.com/watch?v=3mw-2iu4kIc&list=PLHz_AreHm4dn_RXXoa3Ameh77f95Hgwv3&index=5
+
+
+06 - Criei um sistema para Escola, ao criar outro sistema para Academia
+parte do trabalho já estará feita, pois tenho Alunos nos dois.
+
+A) Confiável
+
+B) Natural
+
+C) Manutenível
+
+D) Reutilizável
+
+Resposta correta: D)
+
+07 - Se precisar adicionar uma nova funcionalidade ao sistema,
+consigo fazer isso com grande facilidade.
+
+A) Natural
+
+B) Extensível
+
+C) Reutilizável
+
+D) Oportuno
+
+Resposta correta: B)
+
+08 - Posso desenvolver várias funções que dependem uma da outra ao
+mesmo tempo, se o planejamento for seguido.
+
+A) Oportuno
+
+B) Reutilizável
+
+C) Confiável
+
+D) Manutenível
+
+Resposta correta: A)
+
+09 - O código fica muito simples de ler e de compreender, já que
+não preciso saber os detalhes de funcionamento ao programar.
+
+A) Natural
+
+B) Extensível
+
+C) Manutenível
+
+D) Oportuno
+
+Resposta correta: A)
+
+10 - Posso alterar uma funcionalidade e tudo continua a funcionar
+como antes.
+
+A) Oportuno
+
+B) Reutilizável
+
+C) Confiável
+
+D) Natural
+
+Resposta correta: C)
