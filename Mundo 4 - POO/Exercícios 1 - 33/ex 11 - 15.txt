@@ -1,0 +1,143 @@
+Link da aula: https://www.youtube.com/watch?v=BQsv_BkoBCU&list=PLHz_AreHm4dn_RXXoa3Ameh77f95Hgwv3&index=4
+
+11 - Qual dos objetos abaixo seria o único abstrato da lista?
+
+A) Sensor
+
+B) Robô
+
+C) Notificação
+
+D) Livro
+
+Resposta correta: C)
+
+12 - Na teoria de OO (Orientação a objeto), o termo usado para o ato
+de fazer um objeto existir, a partir de um modelo se chama:
+
+A) Instanciar
+
+B) Classificar
+
+C) Objetificar
+
+D) Forjar
+
+Resposta correta: A)
+
+13 - Todo objeto tem uma lista atividades que podem ser feitas com ele
+ou que ele pode desempenhar sozinho, que são:
+
+A) Atributos
+
+B) Métodos
+
+C) Classes
+
+D) Instâncias
+
+Resposta correta: C)
+
+14 - Ao conjunto de todos os valores de atributos de um objeto num
+determinado momento, damos o nome de:
+
+A) Identidade
+
+B) Instância
+
+C) Método
+
+D) Estado
+
+Resposta correta: D)
+
+15 - Crie duas estruturas de objetos: um concreto e o outro abstrato.
+Inclua também os seus principais atributos, métodos e crie um exemplo
+estado.
+
+
+Objeto concreto: Carro
+
+
+          Atributos
+
+               |
+               V
+
+       + Peso = 1t
+       + Cor = vermelho
+       + Combustivel = True
+       + Cilindrada = 1997 cm³
+       + Marca = Honda
+       + Modelo = Honda Civic G10
+       + Ano de fabricação = 2017
+
+          Métodos
+
+             |
+             V
+
+       + Dirigir()
+       + Colocargasolina()
+       + Reparar()
+       + Limpar()
+       + Vender()
+
+          Estado
+
+             |
+             V
+
+       Carro {
+
+   Peso: 1t,
+   Cor: vermelho,
+   Combustível: True,
+   Cilindrada: 1997 cm³,
+   Marca: Honda
+   Modelo: Honda Civic G10
+   Ano de fabricação: 2017
+   
+}
+
+
+
+Objeto abstrato: Mensagem
+
+
+          Atributos
+
+               |
+               V
+
+       + Tipo = [Venda, informativo, alerta]
+       + Envio = 13:24
+       + Chegada = 13:24
+       + Visualização = False
+
+
+          Métodos
+
+              |
+              V
+
+       + Enviar()
+       + Excluir()
+       + Editar()
+       + Visualizar()
+
+          Estado
+
+            |
+            V
+
+       Mensagem {
+
+   Tipo: [Venda, informativo, alerta]
+   Envio: 13:24,
+   Chegada: 13:24,
+   Visualização: False
+
+}
+
+
