@@ -6,7 +6,11 @@ from rich.panel import Panel
 
 class ControleRemoto:
 
+
+
     def __init__(self):
+
+        # Atributos de instância
 
         self.ligada = False
         self.canal_atual = 1
@@ -30,6 +34,7 @@ class ControleRemoto:
             if self.comando == '0':
                 pass
 
+    # Métodos
 
     def selecionar_canal(self):
 

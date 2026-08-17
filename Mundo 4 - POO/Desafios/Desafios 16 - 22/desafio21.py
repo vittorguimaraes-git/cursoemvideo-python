@@ -6,7 +6,7 @@ from rich import print
 
 class Caneta:
 
-    # Atributos
+    # Atributos de instância
 
     def __init__(self, cor):
         self.cor = cor.capitalize()

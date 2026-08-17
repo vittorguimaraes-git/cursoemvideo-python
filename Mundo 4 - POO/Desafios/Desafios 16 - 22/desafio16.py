@@ -5,12 +5,14 @@
 from rich import print
 
 class Funcionario:
+    # Atributos de classe
 
-    # Atributos
+    empresa = 'Curso em vídeo'
 
     def __init__(self, nome='<desconhecido>', setor='<desconhecido>', cargo='<desconhecido>'):
 
-        self.empresa = "Curso em vídeo"
+        # Atributos de instância
+
         self.nome = nome.capitalize()
         self.setor = setor
         self.cargo = cargo
@@ -18,7 +20,7 @@ class Funcionario:
     # Métodos
 
     def apresentacao(self):
-        return f':handshake: Olá, sou [blue]{self.nome}[/] e sou [blue]{self.cargo}[/] do setor [blue]{self.setor}[/] da empresa {self.empresa}'
+        return f':handshake: Olá, sou [blue]{self.nome}[/] e sou [blue]{self.cargo}[/] do setor [blue]{self.setor}[/] da empresa {Funcionario.empresa}'
 
 
 funcionario1 = Funcionario('Vittor', 'TI', 'desenvolvedor')
