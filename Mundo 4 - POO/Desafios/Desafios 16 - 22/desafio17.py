@@ -20,7 +20,10 @@ class Produto:
     # Métodos
 
     def etiqueta(self):
-        painel = Panel(f'{self.nome:^30}\n{"":-^30}\n{f"R$ {self.preco:,.2f}".center(30,'.')}', title='Produto', width=35)
+        nome_formatado = f' {self.nome} '.center(34) + f'{"-"*34}'
+        preco_formatado = f' {self.preco:,.0f} '.center(34,".")
+        painel = Panel(f"{nome_formatado}\n"
+                       f"{preco_formatado}", width=38, title="Produto")
 
         return painel
 

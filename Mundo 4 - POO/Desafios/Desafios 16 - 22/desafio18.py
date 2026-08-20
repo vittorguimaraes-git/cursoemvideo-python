@@ -11,6 +11,10 @@ from rich import print
 
 
 class Churrasco:
+    #Atributos de classe
+
+    consumo_medio: float = 0.4
+    kilos: float = 82.4
 
     # Atributos
 
@@ -18,18 +22,17 @@ class Churrasco:
 
         self.pessoas = quantidade
         self.titulo = titulo
-        self.consumo = self.pessoas * 0.4
-        self.kilos = 82.4
-        self.total = self.kilos * self.consumo
+        self.consumo = self.pessoas * Churrasco.consumo_medio
+        self.total = Churrasco.kilos * self.consumo
         self.valor = self.total / self.pessoas
 
     # Métodos
-    def analisar(self):
-        analise = Panel(f'Analisando [green]{self.titulo}[/] com [blue]{self.pessoas}[/]\n'
-                        f'Cada participante comerá 400g e cada Kg custa R${self.kilos:,.2f}\n'
+    def analisar(self) -> Panel:
+        analise = Panel(f'Analisando [green]{self.titulo}[/] com [blue]{self.pessoas} convidados[/]\n'
+                        f'Cada participante comerá {Churrasco.consumo_medio:.3f} gramas e cada Kg custa R${Churrasco.kilos:,.2f}\n'
                         f'Recomendo [blue]comprar {self.consumo:,.2f}Kg[/]\n'
                         f'O custo total sera de [green]R${self.total:,.2f}[/]\n'
-                        f'Cada pessoa pagará [yellow]R${self.valor:,.2f}[/] para participar',title=self.titulo, width=60)
+                        f'Cada pessoa pagará [yellow]R${self.valor:,.2f}[/] para participar',title=self.titulo, width=65)
 
         return analise
 
