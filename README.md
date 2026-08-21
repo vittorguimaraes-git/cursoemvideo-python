@@ -43,7 +43,7 @@ Aqui registro o que já aprendi e o que estou praticando.
 
 ## 🚀 Objetivo
 
-Documentar minha evolução no curso e servir como referência para revisões futuras.  
+Documentar a minha evolução no curso e servir como referência para revisões futuras.  
 Cada pasta contém os exercícios correspondentes ao respectivo **Mundo**.
 
 ---
@@ -69,6 +69,6 @@ Cursoemvideo-python/
 
 [✅] Mundo 2 concluído
 
-[✅] Mundo 3 em concluído
+[✅] Mundo 3 concluído
 
 [⬜] Mundo 4 em andamento
