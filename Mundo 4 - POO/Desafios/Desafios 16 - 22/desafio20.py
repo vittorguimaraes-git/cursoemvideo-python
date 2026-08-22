@@ -20,7 +20,7 @@ class Gamer:
 
     # Métodos
 
-    def add_favoritos(self, jogo):
+    def add_favoritos(self, jogo) -> None:
 
         self.jogos.append(jogo)
 
@@ -29,13 +29,13 @@ class Gamer:
 
 
 
-    def ficha(self):
+    def ficha(self) -> None:
 
-        jogos_formatados = "\n".join([f":video_game:[blue]{jogo}[/]" for jogo in self.jogos])
+        jogos_formatados = "\n".join([f":video_game: [blue]{jogo}[/]" for jogo in self.jogos])
 
         ficha = Panel(
 
-            f'Nome real: {self.nome}\n'
+            f'Nome real: [black on white]{self.nome}[/]\n'
                       f'Jogos favoritos:\n'
                       f'{jogos_formatados}',
                       title=f'Jogador <{self.nick}>',
