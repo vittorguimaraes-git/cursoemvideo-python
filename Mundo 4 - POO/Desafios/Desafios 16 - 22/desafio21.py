@@ -9,8 +9,9 @@ class Caneta:
     # Atributos de instância
 
     def __init__(self, cor):
+
         self.cor = cor.capitalize()
-        self.tampa = False
+        self.tampa = True
 
 
 
@@ -18,15 +19,16 @@ class Caneta:
     # Métodos
 
     def destampar(self):
-        self.tampa = True
+        self.tampa = False
 
         return self.tampa
 
 
     def escrever(self, frase):
 
-        if not self.tampa:
-            print(f':x:  A [blue]caneta[/] está tampada!')
+        if self.tampa:
+            print(f':prohibited:  A [blue]caneta[/] está tampada!')
+
         else:
 
             if self.cor in "Vermelho":
@@ -51,7 +53,7 @@ class Caneta:
         print(linhas)
 
     def tampar(self):
-        self.tampa = False
+        self.tampa = True
 
         return self.tampa
 
