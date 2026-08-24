@@ -6,144 +6,139 @@ from rich.panel import Panel
 
 class ControleRemoto:
 
+    CANAL_MIN = 1
+    CANAL_MAX = 5
+    VOLUME_MIN = 0
+    VOLUME_MAX = 4
 
 
-    def __init__(self):
+
+    def __init__(self, canal= 1, volume= 0):
 
         # Atributos de instância
 
-        self.ligada = False
-        self.canal_atual = 1
-        self.volume_atual = 0
+        self.ligada : bool = False
+        self.canal_atual : int = canal
+        self.volume_atual : int = volume
 
 
+    def tv(self) -> None :
+
+        """
+        Mostra o estado atual da televisão caso desligada ou caso ligada
+        :return: None
+        """
 
         if not self.ligada:
-            tv = Panel(' [red bold]A TV está desliga [/]'.center(38),
-                       title='[ TV ]',
-                       width=30
 
-                       )
+            tela = ":prohibited: [red]A tv está desligada[/]".center(52)
 
+            tv = Panel(tela, width=40, title="[TV]")
             print(tv)
 
-
-            self.comando = input('< CH >  |  - VOL +  |  ON/OFF @ ')
-            print("\n")
-
-            if self.comando == '0':
-                pass
-
-    # Métodos
-
-    def selecionar_canal(self):
-
-        if self.canal_atual == 1:
-            return f'[white on yellow] 1 [/]  2   3   4   5'
-
-        elif self.canal_atual == 2:
-            return f' 1  [white on yellow] 2 [/]  3   4   5'
-
-        elif self.canal_atual == 3:
-            return f' 1   2  [white on yellow] 3 [/]  4   5'
-
-        elif self.canal_atual == 4:
-            return f' 1   2   3  [white on yellow] 4 [/]  5'
-
-
-        elif self.canal_atual == 5:
-            return f' 1   2   3   4  [white on yellow] 5 [/]'
-
-        return None
-
-
-    def selecionar_volume(self):
-
-        if self.volume_atual == 0:
-            return f"[cyan on cyan] [/][white on white]    [/]"
-
-        elif self.volume_atual == 1:
-            return f"[cyan on cyan]  [/][white on white]   [/]"
-
-        elif self.volume_atual == 2:
-            return f"[cyan on cyan]   [/][white on white]  [/]"
-
-        elif self.volume_atual == 3:
-            return f"[cyan on cyan]    [/][white on white] [/]"
-
-        elif self.volume_atual == 4:
-            return f"[cyan on cyan]     [/][white on white][/]"
 
         else:
-            return f"[red bold] Opção invalida. [/]"
 
+            tela = "CANAL  ="
 
+            for canal in range(ControleRemoto.CANAL_MIN, ControleRemoto.CANAL_MAX + 1):
+                if canal == self.canal_atual:
+                    tela += f" [black on yellow] {canal} [/]"
+                else:
+                    tela += f" {canal} "
 
+            tela += f"\nVOLUME = "
 
+            for volume in range(ControleRemoto.VOLUME_MIN, ControleRemoto.VOLUME_MAX + 1):
+                if volume <= self.volume_atual:
+                    tela += f"[black on cyan] [/]"
+                else:
+                    tela += f"[black on white] [/ ]"
 
-
-    def ligar(self):
-
-        if self. comando == '@':
-            self.ligada = True
-
-
-
-    def comandos(self):
-
-
-        while self.ligada:
-
-            canal_formatado = self.selecionar_canal()
-            volume_formatado = self.selecionar_volume()
-
-            tv = Panel(f'CANAL  = {canal_formatado}\n'
-                       f'VOLUME = {volume_formatado}', title='[ TV ]', width=40)
-
+            tv = Panel(tela, width=30, title="[TV]")
             print(tv)
 
 
-            self.comando = input('< CH >  |  - VOL +  |  ON/OFF @ ')
-            print("\n")
-
-
-            if self.comando == '@':
-                self.ligada = False
 
 
 
-            elif self.comando == '0':
-                break
+
+    def ligar_desligar(self) -> bool :
+
+        """
+        Alterna o estado do atributo self.ligada para True ou False
+        :return: True ou false
+        """
+
+        self.ligada = not self.ligada
+        return self.ligada
 
 
-            elif self.comando == '>':
-                self.canal_atual += 1
-
-                if self.canal_atual > 5:
-                    self.canal_atual = 1
 
 
-            elif self.comando == '<':
-                self.canal_atual -= 1
 
-                if self.canal_atual < 1:
-                    self.canal_atual = 5
+    def comandos(self) -> str :
 
+        """
+        Pede a entrada de um comando do usuário
+        :return: Uma ‘string’ contendo um comando do usuário
+        """
 
-            elif self.comando == '+':
-                self.volume_atual += 1
+        comando = input(" < CH >  |  - VOL +  |  ON/OF @  |  ")
 
+        match comando:
 
-            elif self.comando == '-':
+            case "@":
+                self.ligar_desligar()
 
-                if self.volume_atual >= 0:
+            case "+":
+
+                if self.ligada:
+                    self.volume_atual += 1
+                if self.volume_atual > ControleRemoto.VOLUME_MAX:
+                    self. volume_atual = ControleRemoto.VOLUME_MAX
+
+            case "-":
+
+                if self.ligada:
                     self.volume_atual -= 1
+                if self.volume_atual < ControleRemoto.VOLUME_MIN:
+                    self. volume_atual = -1
+
+            case "<":
+
+                if self.ligada:
+                    self.canal_atual -= 1
+                    if self.canal_atual < ControleRemoto.CANAL_MIN:
+                        self.canal_atual = ControleRemoto.CANAL_MAX
+
+            case ">":
+
+                if self.ligada:
+                    self.canal_atual += 1
+                    if self.canal_atual > ControleRemoto.CANAL_MAX:
+                        self.canal_atual = ControleRemoto.CANAL_MIN
+
+            case "0":
+
+                pass
+
+            case _:
+                print("[red]Opção inválida.[/]")
+
+        return comando
 
 
-            else:
-                print('[red bold] Opção inválida. [/]')
+t1 = ControleRemoto()
 
 
-c1 = ControleRemoto()
-c1.ligar()
-c1.comandos()
+
+while True:
+
+    t1.tv()
+    escolha = t1.comandos()
+    print()
+
+
+    if escolha == "0":
+        break
