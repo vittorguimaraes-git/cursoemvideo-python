@@ -1,5 +1,3 @@
-
-
 class Pessoa:
 
     def __init__(self, nome = "", idade = 0):
@@ -42,3 +40,4 @@ class Funcionario(Pessoa):
 
     def bater_ponto(self):
          print(f"{self.nome} acabou de bater o ponto!")
+         
