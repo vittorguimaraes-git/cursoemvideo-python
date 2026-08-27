@@ -48,21 +48,6 @@ Cada pasta contém os exercícios correspondentes ao respectivo **Mundo**.
 
 ---
 
-## 📂 Estrutura do Repositório
-
-Cursoemvideo-python/
-│
-├── Mundo_1 - Fundametos/
-│   └── exercícios 1 - 35
-│
-├── Mundo_2 - Estruturas de controle/
-│   └── exercícios 36 - 71
-│
-├── Mundo_3 - Estruturas compostas
-│   └── exercícios 72 - 114
-│
-└── README.md
-
 # 📈 Progresso no curso
 
 [✅] Mundo 1 concluído
