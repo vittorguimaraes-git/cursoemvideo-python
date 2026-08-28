@@ -18,7 +18,7 @@ class Funcionario(ABC):
         pass
 
 
-    def analisar_salario(self):
+    def analisar_salario(self) -> None:
 
         salario_liquido = self.calcular_salario()
         salarios_min =  salario_liquido / self.sal_min
@@ -38,7 +38,7 @@ class FuncionarioHorista(Funcionario):
         self.qtd_horas = qtd_horas
 
 
-    def calcular_salario(self):
+    def calcular_salario(self) -> float:
         salario_bruto = self.valor_hora * self.qtd_horas
         desconto_inss = salario_bruto * self.inss
         salario_liquido = salario_bruto - desconto_inss
@@ -53,7 +53,7 @@ class FuncionarioMensalista(Funcionario):
         self.salario_bruto = salario_bruto
 
 
-    def calcular_salario(self):
+    def calcular_salario(self) -> float:
         desconto_inss = self.salario_bruto * self.inss
         salario_liquido = self.salario_bruto - desconto_inss
         return salario_liquido
