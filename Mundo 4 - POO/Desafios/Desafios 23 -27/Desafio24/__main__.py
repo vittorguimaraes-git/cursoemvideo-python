@@ -2,8 +2,17 @@ from cafeteria import *
 
 def main():
 
-    bebida = Cafe()
-    bebida.preparar()
+    leite = Leite()
+    cafe = Cafe()
+    cha = Cha()
+
+    leite.preparar()
+    print()
+
+    cafe.preparar()
+    print()
+
+    cha.preparar()
 
 
 if __name__ == '__main__':

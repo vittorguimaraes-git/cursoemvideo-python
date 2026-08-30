@@ -1,3 +1,4 @@
+import math
 from abc import ABC, abstractmethod
 
 class Poligono(ABC):
@@ -30,13 +31,13 @@ class Quadrado(Poligono):
 
 class Circulo(Poligono):
 
-    def __init__(self, raio):
-        super().__init__(raio)
+    def __init__(self, raio = 1):
+        super().__init__(0)
         self.raio = raio
 
     def perimetro(self) -> float :
-        return self.raio * 3.14 * 2
+        return self.raio * math.pi * 2
 
     def area(self) -> float :
-        return (self.raio ** 2) * 3.14
+        return (self.raio ** 2) * math.pi
 

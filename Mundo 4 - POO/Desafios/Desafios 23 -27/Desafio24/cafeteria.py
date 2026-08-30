@@ -12,15 +12,16 @@ class BebidaQuente(ABC):
         pass
 
 
+    def ferver_agua(self) -> str:
+        return "Fervendo água a 100 graus Celsius."
+
+
     def preparar(self):
         print(" Iniciando preparo ".center(30, "-"))
         print(f"1. {self.ferver_agua()}")
         print(f"2. {self.misturar()}")
         print(f"3. {self.servir()}")
         print(" Bebida pronta ".center(20, "-"))
-
-    def ferver_agua(self) -> str:
-        return "Fervendo água a 100 graus Celsius."
 
 
 class Cafe(BebidaQuente):
