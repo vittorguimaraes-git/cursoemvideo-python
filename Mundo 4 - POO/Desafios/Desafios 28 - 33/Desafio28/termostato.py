@@ -18,9 +18,6 @@ class Termostato:
         if temp < 16:
             self.__temperatura = 16
 
-
-
-
     @property
     def ftemperatura(self) -> str:
         return f"{self.__temperatura}°C"

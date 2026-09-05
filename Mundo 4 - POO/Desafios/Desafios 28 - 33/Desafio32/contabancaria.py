@@ -11,9 +11,9 @@ class ContaBancaria:
         self.__saldo = saldo
 
         if senha is None:
-            senha = getpass("Senha: ", echo_char="*")
+            senha = self.pedir_senha()
 
-        self.__hash = hashlib.sha3_256(senha.encode()).hexdigest()
+        self.__hash = hashlib.sha3_256(senha.encode('utf-8')).hexdigest()
 
     @property
     def nome(self):
@@ -28,39 +28,51 @@ class ContaBancaria:
         if valor > 0:
             self.__saldo += valor
 
-    def pedir_senha(self) -> bool:
+    def pedir_senha(self) -> str:
 
-        senha = getpass("Senha: ", echo_char="*")
-        verificar_senha = sha3_256(senha.encode()).hexdigest()
+        while True:
+            senha = getpass("Senha: ", echo_char="*")
+            if len(senha) < 6:
+                print("A senha deve ter pelo menos 6 caracteres.")
+            else:
+                break
 
-        if verificar_senha == self.__hash:
-            return True
-        else:
-            return False
+        hash_senha = sha3_256(senha.encode("utf-8")).hexdigest()
+        return hash_senha
 
-    def sacar(self, valor: float, chave: str = "") -> str:
-        print(f"Sacando um valor de R${valor:.2f}")
 
-        if not chave:
-            if self.pedir_senha():
+    def sacar(self, valor: float = 0, chave: str = ""):
+
+        if valor < 0:
+            raise ValueError("Valor invalido")
+
+        if valor > self.__saldo:
+            raise ValueError("Saldo insuficiente")
+
+        if chave and self.validar_senha(chave):
+            self.__saldo -= valor
+            return "Saque realizado com sucesso"
+
+        elif not chave:
+            senha = self.pedir_senha()
+            if senha == self.__hash:
                 self.__saldo -= valor
                 return "Saque realizado com sucesso"
+
             else:
-                return "Senha incorreta"
+                return "Saldo insuficiente"
 
         else:
+            return "Falha na autenticação"
 
-            if self.validar_senha(chave):
-                self.__saldo -= valor
-                return "Saque realizado com sucesso"
-            else:
-                return "Senha incorreta"
+
+
 
     def validar_senha(self, senha):
 
-        verificar_hash = sha3_256(senha.encode()).hexdigest()
+        senha_hash = sha3_256(senha.encode()).hexdigest()
 
-        if verificar_hash == self.__hash:
+        if senha_hash == self.__hash:
             print("Senha validada com sucesso")
             return True
         else:

@@ -5,16 +5,15 @@ class Diario:
         self.__segredos = []
         self.__senha = senhamestre
 
-
-
     @property
     def senha(self):
         raise PermissionError("Ninguém tem permissão de ver a senha.")
 
 
-
     def escrever(self, msg):
-        self.__segredos.append(msg)
+        if isinstance(msg, str) and len(msg) > 0:
+            self.__segredos.append(msg.strip())
+
 
     def ler(self, senha = "") -> bool:
 
