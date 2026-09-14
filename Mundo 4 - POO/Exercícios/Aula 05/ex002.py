@@ -7,10 +7,10 @@ class Gafanhoto:
     -----------------------------------
 
     Essa classe cria um "Gafanhoto(a)"
-    com nome e idade
+    com arquivo e idade
 
     Para criar um gafanhoto(a), use
-    variável = Gafanhoto(nome, idade)
+    variável = Gafanhoto(arquivo, idade)
 
     """
 
@@ -21,7 +21,7 @@ class Gafanhoto:
 
 
 
-    # Parâmetro: nome    # Atributo: self.nome
+    # Parâmetro: arquivo    # Atributo: self.arquivo
     # Parâmetro: idade   # Atributo: self.idade
     # OBS: Não são as mesmas Coisas!
 
@@ -33,13 +33,13 @@ class Gafanhoto:
 
 
     # def mensagem(self):
-    #     return f'{self.nome} é Gafanhoto(a) e tem {self.idade} anos'
+    #     return f'{self.arquivo} é Gafanhoto(a) e tem {self.idade} anos'
 
     def __str__(self): # Dunder Method
         return f'{self.nome} é Gafanhoto(a) e tem {self.idade} anos'
 
     def __getstate__(self):
-        return f'Estado: nome = {self.nome}; idade = {self.idade}'
+        return f'Estado: arquivo = {self.nome}; idade = {self.idade}'
 
 
 
@@ -85,7 +85,7 @@ print(g1.__class__) # Mostra a classe do objeto
 # Declaração de objetos Aula anterior
 # ____________________________________
 #g1 = Gafanhoto()
-#g1.nome = 'Gabriel'
+#g1.arquivo = 'Gabriel'
 #g1.idade = 20
 
 # print(g1.mensagem())  Antes

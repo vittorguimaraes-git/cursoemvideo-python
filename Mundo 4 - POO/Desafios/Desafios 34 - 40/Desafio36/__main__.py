@@ -3,13 +3,22 @@ from Pagamentos import *
 
 def main():
 
-    pix = Pix(3000)
-    cartao = CartaoCredito(4000)
-    boleto = Boleto(5000)
+    cartao = CartaoCredito()
+    pix = Pix()
+    boleto = Boleto()
 
-    fazer_pagamento(pix)
-    fazer_pagamento(boleto)
-    fazer_pagamento(cartao)
+    print()
+
+    pix.pagar(1354)
+    cartao.pagar(1000)
+    boleto.pagar(3021)
+
+    print()
+
+
+    fazer_pagamento(Pix(), 2000)
+    fazer_pagamento(CartaoCredito(), 3000)
+    fazer_pagamento(Boleto(), 1050)
 
 
 

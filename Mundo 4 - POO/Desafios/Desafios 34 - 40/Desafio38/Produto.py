@@ -21,7 +21,7 @@ class Carrinho:
     def __str__(self):
         texto = ["-" * 30]
         for produto in self.produtos:
-            texto.append(f"{produto.nome}  (R${produto.preco:,.2f})")
+            texto.append(f"{produto.arquivo}  (R${produto.preco:,.2f})")
         texto.append("-" * 30)
         texto.append(f"TOTAL: R${self.total:,.2f}")
         return "\n".join(texto)

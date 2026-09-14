@@ -1,7 +1,9 @@
 from Mensagem import *
 
 def main():
-    Erro("Ola").mostrar()
+    Mensagem('Ola').mostrar()
+    Alerta('Ola').mostrar()
+    Erro('Ola').mostrar()
 
 if __name__ == '__main__':
     main()

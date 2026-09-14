@@ -2,10 +2,10 @@ from rich.panel import Panel
 from rich import print
 
 class Mensagem:
-    def __init__(self, msg):
+    def __init__(self, msg, tipo: str = "aviso", icone: str = ":speech_balloon:"):
         self._msg = msg
-        self._tipo = "aviso".upper()
-        self._icone = ":speech_balloon:"
+        self._tipo = tipo.upper()
+        self._icone = icone
 
     def mostrar(self):
         titulo = f"{self._icone} {self._tipo} {self._icone}"
@@ -16,10 +16,7 @@ class Mensagem:
 
 class Alerta(Mensagem):
     def __init__(self, msg):
-        super().__init__(msg)
-
-        self._tipo = 'alerta'.upper()
-        self._icone = ":warning:"
+        super().__init__(msg, "alerta", ":warning:")
 
     def mostrar(self):
         titulo = f"{self._icone} {self._tipo} {self._icone}"
@@ -28,13 +25,9 @@ class Alerta(Mensagem):
         print(painel)
 
 
-
-
-class Erro:
+class Erro(Mensagem):
     def __init__(self, msg):
-        self._msg = msg
-        self._tipo = "alerta".upper()
-        self._icone = ":prohibited:"
+        super().__init__(msg, "alerta", ":prohibited:")
 
     def mostrar(self):
         titulo = f"{self._icone} {self._tipo} {self._icone}"

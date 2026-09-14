@@ -5,12 +5,20 @@ class Arquivo(ABC):
 
     def __init__(self, nome, tam):
         self.tam = tam / (1000 ** 2)
-        self.nome = nome
+        self.arquivo = nome
         self._extensao = None
 
     @property
     def nome_completo(self):
-            return f"{self.nome}.{self._extensao}"
+            return f"{self.arquivo}.{self._extensao}"
+
+    @property
+    def extensao(self):
+        return self._extensao
+
+    @extensao.setter
+    def extensao(self, extensa):
+        raise PermissionError ("Você não pode alterar a extensão do arquivo!")
 
     @abstractmethod
     def abrir(self):

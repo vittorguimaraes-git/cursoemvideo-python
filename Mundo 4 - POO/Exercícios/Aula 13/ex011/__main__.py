@@ -4,7 +4,7 @@
 
 print(len("Gustavo Guanabara")) # — > Retorna a quantidade de letras na ‘string’.
 print(len(["Curso", "Python"])) # — > Retorna a quantidade de elementos na lista.
-print(len({"nome" : "Maria", "idade" : 22})) # — > Retorna a quantidade de elementos no dicionário.
+print(len({"arquivo" : "Maria", "idade" : 22})) # — > Retorna a quantidade de elementos no dicionário.
 
 # Ou seja, uma mesma função pode executar de várias formas um ação
 
