@@ -41,6 +41,17 @@ Aqui registro o que já aprendi e o que estou praticando.
 
 ---
 
+## 🌍 Mundo 4 - Programação Orientada a Objetos
+
+- Classes e objetos  
+- Atributos e métodos  
+- Encapsulamento  
+- Herança e polimorfismo  
+- Estruturas de POO em Python  
+- [Exercícios do Mundo 4](./Mundo%204%20-%20POO)
+
+---
+
 ## 🚀 Objetivo
 
 Documentar a minha evolução no curso e servir como referência para revisões futuras.  
